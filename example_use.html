@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Example Usage</title>
+</head>
+
+<body>
+    <h1>Example Usage</h1>
+
+    <p>This model can parse plain text and make predictions on natural link placement. Using the provided inference
+        script enter any text and the output will underline phrases with highest probabilities of being a link.
+    </p>
+    <h2>Input Text:</h2>
+    <p>Why take out pet insurance for senior cats and dogs? Cats and dogs often require more veterinary care as they
+        grow older; pet insurance can help by covering a portion of your eligible vet bills. Other benefits of pet
+        insurance for senior pets may include: Cover for accidental injuries, including car accidents, poisoning,
+        snake/insect bites and wounds Policies for older animals with limited benefits for specified illnesses (age
+        limits apply) Being able to choose your own vet or clinic for treatment A financial safety net and peace of mind
+        if your senior pet needs emergency care Coosing pet insurance for senior pets If you’re looking to buy or switch
+        to a new pet insurance policy for your older furry companion, please consider the following: Basic policies for
+        older pets often have a lower benefit percentage (i.e. reimbursement rate), so you’ll have to pay a larger
+        portion of eligible vet bills. For example, you may only be able to claim up to 60% back for eligible
+        treatments, meaning you’d have to foot the remaining 40% of the bill. Comprehensive pet insurance is usually
+        available for pets up until they turn nine. If you take out a suitable policy before that, your pooch or feline
+        can be protected for life – if you maintain continuous cover past this age. Optional routine care is also
+        available for older pets up to nine years of age as an add-on for new policyholders. Some insurers offer
+        accident-only cover for senior pets before or up to 16 years of age. A basic level of cover for injuries will be
+        cheaper than more comprehensive accident and illness cover.</p>
+
+    <h2>Output Text:</h2>
+
+    <p>Why take out pet insurance for senior cats and dogs? Cats and dogs often require more veterinary care as they
+        grow older; <u>pet</u> <u>insurance</u> can help by covering a portion of your eligible vet bills. Other
+        benefits of pet <u>insurance</u> for senior <u>pets</u> may include: Cover for accidental injuries, including
+        car accidents, poisoning, snake/insect bites and wounds Policies for older animals with limited benefits for
+        specified illnesses (age limits apply) Being able to choose your own vet or clinic for treatment A financial
+        safety net and peace of mind if your senior pet needs emergency care Coosing pet insurance for senior pets If
+        you’re looking to buy or switch to a new pet insurance policy for your older furry companion, please consider
+        the following: Basic <u>policies</u> for older pets often have a lower <u>benefit</u> percentage (i.e.
+        reimbursement rate), so you’ll have to pay a larger portion of eligible vet bills. For example, you may only be
+        able to claim up to 60% back for eligible treatments, meaning you’d have to foot the remaining 40% of the bill.
+        Comprehensive pet insurance is usually available for pets up until they turn nine. If you take out a suitable
+        policy before that, your pooch or feline can be protected for life – if you maintain continuous cover past this
+        age. Optional <u>routine</u> <u>care</u> is also available for older pets up to nine years of age as an add-on
+        for new policyholders. Some insurers offer <u>accident</u><u>-</u><u>only</u> <u>cover</u> <u>for</u>
+        <u>senior</u> <u>pets</u> before or up to 16 years of age. A basic level of cover for injuries will be cheaper
+        than more comprehensive accident and illness cover.
+    </p>
+
+    <h2>Notes:</h2>
+    <p>The <a href="https://www.comparethemarket.com.au/pet-insurance/senior-pets/">source</a> page
+        already has three internal links using phrases "Comprehensive pet insurance",
+        "accident-only cover" and "accident and illness cover". This indicates that our model correctly predicted
+        "accidental cover" but also extended it to "accidental cover for senior pets" which gives additional context to
+        the link. This could be considered an anchor text modification suggestion. Interestingly the model also underlines the phrase "routine care" which doesn't have a suitable target indicating
+        an opportunity for a new page. Perhaps the most obvious hint is at the very start of the text segment:</p>
+
+        <p>Cats and dogs often require more veterinary care as they grow older; pet insurance can help by covering a portion of your eligible vet bills. The phrase "pet insurance" has a <a href="https://www.comparethemarket.com.au/pet-insurance/">very clear target page</a> in this case, and while you don't need a BERT model to help you with basic keyword matching it's important to note that it's not always as clean-cut as with this example.</p>
+        <p>To make these recommendations work at scale a form of similarity search would be beneficial where we not only recommend the link location and anchor text but also its target URL.</p>
+
+</body>
+
+</html>
