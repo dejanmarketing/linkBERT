@@ -1,11 +1,10 @@
 import streamlit as st
 import torch
-from transformers import BertForTokenClassification, BertTokenizerFast  # Import BertTokenizerFast
+from transformers import AutoModelForTokenClassification, AutoTokenizer
 
-def load_model(model_name='linkbert.pth'):
-    model_path = model_name
-    model = BertForTokenClassification.from_pretrained('bert-base-uncased', num_labels=2)
-    model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
+def load_model(model_name='dejanseo/LinkBERT'):
+    # Updated to use AutoModelForTokenClassification and AutoTokenizer for flexibility
+    model = AutoModelForTokenClassification.from_pretrained(model_name)
     model.eval()  # Set the model to inference mode
     return model
 
@@ -42,11 +41,11 @@ def predict_and_annotate(model, tokenizer, text):
     return annotated_text
 
 # Streamlit app setup
-st.title("BERT Token Classification for Anchor Text Prediction")
+st.title("LinkBERT Token Classification for Anchor Text Prediction")
 
 # Load the model and tokenizer
-model = load_model('linkbert.pth')
-tokenizer = BertTokenizerFast.from_pretrained('bert-base-uncased')  # Use BertTokenizerFast
+model = load_model()
+tokenizer = AutoTokenizer.from_pretrained('dejanseo/LinkBERT')  # Updated tokenizer to match the model
 
 # User input text area
 user_input = st.text_area("Paste the text you want to analyze:", "Type or paste text here.")
