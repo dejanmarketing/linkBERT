@@ -9,7 +9,7 @@ pipeline_tag: token-classification
 
 # LinkBERT: Fine-tuned BERT for Natural Link Prediction
 
-LinkBERT is an advanced fine-tuned version of the [bert-large-cased](https://huggingface.co/google-bert/bert-large-cased) model developed by [Dejan Marketing](https://dejanmarketing.com/). The model is designed to predict natural link placement within web content. This binary classification model excels in identifying distinct token ranges that web authors are likely to choose as anchor text for links. By analyzing never-before-seen texts, LinkBERT can predict areas within the content where links might naturally occur, effectively simulating web author behavior in link creation.
+[LinkBERT](https://huggingface.co/dejanseo/LinkBERT) is an advanced fine-tuned version of the [bert-large-cased](https://huggingface.co/google-bert/bert-large-cased) model developed by [Dejan Marketing](https://dejanmarketing.com/). The model is designed to predict natural link placement within web content. This binary classification model excels in identifying distinct token ranges that web authors are likely to choose as anchor text for links. By analyzing never-before-seen texts, LinkBERT can predict areas within the content where links might naturally occur, effectively simulating web author behavior in link creation.
 
 # Online Demo
 
