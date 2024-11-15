@@ -27,18 +27,7 @@ LinkBERT's applications are vast and diverse, tailored to enhance both the effic
 
 ## Training and Performance
 
-LinkBERT was fine-tuned on a dataset of organic web content and editorial links. The training involved preprocessing web content, annotating links with temporary markup for clear distinction, and employing a specialized tokenization process to prepare the data for model training. In adition to commonly available data sources such as Wikipedia, additional training data was also sourced from:
-
-- [Owayo USA](https://www.owayo.com/)
-- [Owayo Germany](https://www.owayo.de/)
-- [Compare the Market](https://www.comparethemarket.com.au/)
-- [Leonardo AI](https://leonardo.ai/)
-- [The Wests Group](https://mywests.com.au/)
-- [Zendesk](https://www.zendesk.com/)
-- [Australia Post](https://auspost.com.au/)
-- [Probe Group](https://www.probecx.com/)
-- [Monarch Institute](https://www.monarch.edu.au/)
-- And many others...
+LinkBERT was fine-tuned on a dataset of organic web content and editorial links. The training involved preprocessing web content, annotating links with temporary markup for clear distinction, and employing a specialized tokenization process to prepare the data for model training.
 
 ### Training Highlights:
 
